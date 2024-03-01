@@ -22,8 +22,7 @@ Similar to text detection, the results are stored in the `eval/rec_results` dire
 For examples:
 python
 ```
-python recognition/eval_rec.py --gt_file rec_gts/coco.txt --pred_file rec_re
-sults/results/starnet/coco.txt
+python recognition/eval_rec.py --gt_file rec_gts/coco.txt --pred_file rec_results/results/starnet/coco.txt
 ```
 
 ## Training:
