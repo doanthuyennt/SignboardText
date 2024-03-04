@@ -1,5 +1,77 @@
 # SignboardText
+> Scene text detection and recognition have attracted much attention in recent years because of their potential applications. Detecting and recognizing texts in images may suffer from scene complexity and text variations. Some of these problematic cases are included in popular benchmark datasets, but only to a limited extent. In this work, we investigate the problem of scene text detection and recognition in a domain with extreme challenges. We focus on in-the-wild signboard images in which text commonly appears in different fonts, sizes, artistic styles, or languages with cluttered backgrounds. We first contribute an in-the-wild signboard dataset with 79K text instances on both line-level and word-level across 2,104 scene images. We then comprehensively evaluated recent state-of-the-art (SOTA) approaches for text detection and recognition on the dataset. By doing this, we expect to realize the barriers of current state-of-the-art approaches to solving the extremely challenging issues of scene text detection and recognition, as well as their applicability in this domain. 
+
 This repository includes the code and data links mentioned in our papers, encompassing all the training data, evaluation scripts, and results utilized in our research.
+
+<p align="center">
+  <img alt="example1" src="resources/1.jpg" width="28%" height=250>
+  <img alt="example2" src="resources/2.jpg" width="28%" height=250>
+  <img alt="example3" src="resources/3.jpg" width="28%" height=250>
+  <img alt="example4" src="resources/4.jpg" width="28%" height=250>
+  <img alt="example5" src="resources/5.jpg" width="28%" height=250>
+  <img alt="example6" src="resources/6.jpg" width="28%" height=250>
+</p>
+
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg" align="center">
+<thead>
+  <tr>
+    <th class="tg-0pky">Dataset</th>
+    <th class="tg-c3ow">IC15</th>
+    <th class="tg-c3ow">TotalText</th>
+    <th class="tg-c3ow">VinText</th>
+    <th class="tg-c3ow">Ours</th>
+    <th class="tg-c3ow">Total</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">No. of <br>signboard<br>images</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">411</td>
+    <td class="tg-c3ow">516</td>
+    <td class="tg-c3ow">1175</td>
+    <td class="tg-c3ow">2104</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">No. of <br>text instances</td>
+    <td class="tg-c3ow" colspan="3">20261</td>
+    <td class="tg-c3ow">59588</td>
+    <td class="tg-c3ow">79849</td>
+  </tr>
+</tbody>
+</table>
+
+## Download
+To download the data, please send a request email to thuyentd@uit.edu.vn and tell us which school you are affiliated with. And by downloading this dataset, USER agrees:
+> * to use this dataset for research or educational purposes only;
+> * to not distribute or part of this dataset in any original or modified form;
+> * and to cite our github repo whenever this dataset are employed to help produce published results.
+
+```
+|-- annotations.json
+|-- annotations_line.json
+|-- detection
+|   |-- TotalText
+|   `-- icdar15
+|-- images
+|   |-- english
+|   |-- vietsignboard
+|   `-- vin
+`-- recognition
+    |-- images
+    `-- labels
+```
 
 ## Detection
 ### Main results:
@@ -65,74 +137,3 @@ python recognition/eval_rec.py --gt_file rec_gts/coco.txt --pred_file rec_result
     + STARNet `PaddleOCR`;
     + VietOCR `src/vietocr`; 
     + etc...
-
-## Acknowledgement
-
-```bibtex
-@misc{tian2019adelaidet,
-  author =       {Tian, Zhi and Chen, Hao and Wang, Xinlong and Liu, Yuliang and Shen, Chunhua},
-  title =        {{AdelaiDet}: A Toolbox for Instance-level Recognition Tasks},
-  howpublished = {\url{https://git.io/adelaidet}},
-  year =         {2019}
-}
-
-@inproceedings{li2019show,
-  title={Show, attend and read: A simple and strong baseline for irregular text recognition},
-  author={Li, Hui and Wang, Peng and Shen, Chunhua and Zhang, Guyu},
-  booktitle={Proceedings of the AAAI conference on artificial intelligence},
-  volume={33},
-  number={01},
-  pages={8610--8617},
-  year={2019}
-}
-
-@article{baek2019STRcomparisons,
-  title={What Is Wrong With Scene Text Recognition Model Comparisons? Dataset and Model Analysis},
-  author={Jeonghun Baek and Geewook Kim and Junyeop Lee and Sungrae Park and Dongyoon Han and Sangdoo Yun and Seong Joon Oh and Hwalsuk Lee},
-  journal={2019 IEEE/CVF International Conference on Computer Vision (ICCV)},
-  year={2019},
-  pages={4714-4722},
-  url={https://api.semanticscholar.org/CorpusID:102481180}
-}
-
-@inproceedings{lee2020satrn,
-  title={On Recognizing Texts of Arbitrary Shapes with 2D Self-Attention},
-  author={Lee, Junyeop and Park, Sungrae and Baek, Jeonghun  and Oh, Seong Joon and Kim, Seonghyeon and Lee, Hwalsuk},
-  year={2020},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshop on Text and Documents in the Deep Learning Era WTDDLE},
-}
-
-@InProceedings{bautista2022parseq,
-  title={Scene Text Recognition with Permuted Autoregressive Sequence Models},
-  author={Bautista, Darwin and Atienza, Rowel},
-  booktitle={European Conference on Computer Vision},
-  pages={178--196},
-  month={10},
-  year={2022},
-  publisher={Springer Nature Switzerland},
-  address={Cham},
-  doi={10.1007/978-3-031-19815-1_11},
-  url={https://doi.org/10.1007/978-3-031-19815-1_11}
-}
-
-@inproceedings{ye2022dptext,
-  title={DPText-DETR: Towards Better Scene Text Detection with Dynamic Points in Transformer},
-  author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Du, Bo and Tao, Dacheng},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={37},
-  number={3},
-  pages={3241--3249},
-  year={2023}
-}
-
-@inproceedings{ye2023deepsolo,
-  title={DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
-  author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Liu, Tongliang and Du, Bo and Tao, Dacheng},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={19348--19357},
-  year={2023}
-}
-```
-
-## Data
-Our dataset is academia-only and cannot be used on any commercial project and research. To download the data, please send a request email to thuyentd@uit.edu.vn and tell us which school you are affiliated with.
