@@ -62,12 +62,7 @@ To download the data, please send a request email to thuyentd@uit.edu.vn and tel
 |-- annotations.json
 |-- annotations_line.json
 |-- detection
-|   |-- TotalText
-|   `-- icdar15
 |-- images
-|   |-- english
-|   |-- vietsignboard
-|   `-- vin
 `-- recognition
     |-- images
     `-- labels
